@@ -1,0 +1,9 @@
+body {
+  overflow: auto !important;
+}
+
+.modal-backdrop,
+.offcanvas-backdrop,
+.toast-container {
+  display: none !important;
+}
