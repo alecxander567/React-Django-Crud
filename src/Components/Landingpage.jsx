@@ -27,14 +27,14 @@ function Landingpage() {
     });
 
     const data = await response.json();
-        if (response.ok) {
-          alert('Signup successful!');
-          setUsername('');
-          setEmail('');
-          setPassword('');
-        } else {
-          alert(`Signup failed: ${data.error || 'Something went wrong'}`);
-        }
+      if (response.ok) {
+        alert('Signup successful!');
+        setUsername('');
+        setEmail('');
+        setPassword('');
+      } else {
+        alert(`Signup failed: ${data.error || 'Something went wrong'}`);
+      }
     };
 
     const handleLogin = async (e) => {
@@ -64,6 +64,7 @@ function Landingpage() {
     };
 
   return (
+    <>
     <div className="landingpage-container">
       <div className="overlay"></div>
         <ul className="animated-circles">
@@ -71,7 +72,6 @@ function Landingpage() {
                 <li key={i}></li>
             ))}
         </ul>
-
       <div className="content container text-center text-light d-flex flex-column justify-content-center align-items-center">
         <nav className="navbar navbar-dark w-100 mt-3">
           <div className="container d-flex justify-content-between align-items-center">
@@ -88,7 +88,6 @@ function Landingpage() {
             </div>
           </div>
         </nav>
-
         <main className="mt-5 text-center">
           <h1 className="display-4 fw-bold animate-fade-in">Organize & Manage Data</h1>
           <p className="lead animate-fade-in delay-1">Powerful and intuitive CRUD operations</p>
@@ -97,8 +96,6 @@ function Landingpage() {
           </button>
         </main>
       </div>
-
-      {/* Log in Modal */}
       <div
         className="modal fade"
         id="loginModal"
@@ -165,9 +162,7 @@ function Landingpage() {
           </div>
         </div>
       </div>
-
-        {/* Sign up Modal */}
-        <div className="modal fade" id="signupModal" tabIndex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+      <div className="modal fade" id="signupModal" tabIndex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content bg-dark text-light">
             <div className="modal-header border-secondary">
@@ -199,9 +194,9 @@ function Landingpage() {
             </form>
             </div>
         </div>
-        </div>
-
-    </div>
+      </div>
+    </div>       
+    </>
   );
 }
 
